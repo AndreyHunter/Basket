@@ -115,6 +115,10 @@ a {
     background-color: rgb(179, 50, 50);
 }
 
+.addToCart-btn.active {
+    background-color: rgb(180, 39, 39);
+}
+
 
 @media (max-width: 968px) {
     .app {

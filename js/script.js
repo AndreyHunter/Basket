@@ -3,7 +3,8 @@
 import {
 	getBasketFromLocalStorage,
 	setCardToLocalStorage,
-	renderBasketLength
+	renderBasketLength,
+    updateBasketBtnColor
 } from './modules/localStorage.js';
 
 import { renderCards } from './modules/render.js';
@@ -13,6 +14,7 @@ import { CARDS_VIEV_COUNT } from './modules/constans.js';
 getData('https://fakestoreapi.com/products')
 	.then((res) => renderCards(res, '.app'))
 	.then(() => renderBasketLength())
+    .then(() => updateBasketBtnColor(getBasketFromLocalStorage()))
 	.catch((err) => console.error('Something went wrong', err));
 
 const productList = document.querySelector('.app');
@@ -20,13 +22,9 @@ productList.addEventListener('click', addToBasket);
 
 function addToBasket(e) {
 	const targetBtn = e.target.closest('.addToCart-btn');
-
 	if (!targetBtn) return;
-
 	const card = targetBtn.closest('.app__card');
-
 	if (!card) return;
-
 	const id = card.dataset.productid;
 
 	let basket = getBasketFromLocalStorage();
@@ -43,4 +41,5 @@ function addToBasket(e) {
 	}
 
 	setCardToLocalStorage(basket);
+    updateBasketBtnColor(basket);
 }
