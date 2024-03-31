@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p  {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-inline: auto;
+    padding-top: 100px;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.app__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.app__card-title {
+    display: block;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    margin-bottom: 5px;
+    transition: all 0.1s ease-in;
+}
+
+.app__card-title:hover {
+    color: black;
+}
+
+.app__card-image-wrapper {
+    align-self: center;
+}
+
+.app__card-image {
+    height: 150px;
+}
+
+.addToCard-btn {
+    width: 100%;
+    min-height: 45px;
+    border: none;
+    outline: none;
+    background-color: rgb(226, 78, 78);
+    color: white;
+    border-radius: 8px;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+}
+
+.addToCard-btn:hover {
+    background-color: rgb(179, 50, 50);
+}
+
+
+@media (max-width: 968px) {
+    .app {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr;
+    }
+}
