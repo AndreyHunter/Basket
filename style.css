@@ -63,7 +63,7 @@ a {
     height: 150px;
 }
 
-.addToCard-btn {
+.addToCart-btn {
     width: 100%;
     min-height: 45px;
     border: none;
@@ -75,7 +75,7 @@ a {
     cursor: pointer;
 }
 
-.addToCard-btn:hover {
+.addToCart-btn:hover {
     background-color: rgb(179, 50, 50);
 }
 

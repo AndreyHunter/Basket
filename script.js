@@ -1,5 +1,10 @@
 'use strict';
 
+import { 
+    getBasketFromLocalStorage,
+    setCardToLocalStorage
+} from "./localStorage.js";
+
 async function getPhotos(url) {
     try {
         const res = await fetch(url)
@@ -37,7 +42,7 @@ function renderCards(data, selector) {
                 </div>
                 
 
-                <button class="addToCard-btn">Добавить в корзину</button>
+                <button class="addToCart-btn">Добавить в корзину</button>
             </div>
         `
 
@@ -50,6 +55,31 @@ const productList = document.querySelector('.app')
 productList.addEventListener('click', addToBasket)
 
 function addToBasket(e) {
-    const targetBtn = e.target
-    console.log(targetBtn)
+    const targetBtn = e.target.closest('.addToCart-btn')
+    
+    if (!targetBtn) return
+
+    const card = targetBtn.closest('.app__card')
+
+    if (!card) return
+
+    const id = card.dataset.productid
+
+    let basket = getBasketFromLocalStorage()
+
+    if (!Array.isArray(basket)) {
+        basket = []
+    }
+ 
+    if (!basket.includes(id)) {
+        basket.push(id)
+    } else {
+        const index = basket.indexOf(id)
+        basket.splice(index, 1)
+    }
+
+    setCardToLocalStorage(basket) 
+    
+    console.log(basket)
 }
+
