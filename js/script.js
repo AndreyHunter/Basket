@@ -4,29 +4,15 @@ import {
     getBasketFromLocalStorage,
     setCardToLocalStorage,
     renderBasketLength
-} from './localStorage.js';
+} from './modules/localStorage.js';
 
-import {renderCards} from './render.js'
+import {renderCards} from './modules/render.js'
+import { getData } from './modules/requests.js';
 
-async function getPhotos(url) {
-    try {
-        const res = await fetch(url)
-        if (!res.ok) {
-            throw new Error;
-        }
-        
-        return res.json()
-
-    } catch (err) {
-        console.error('ERROR: Failed to fetch data', err);
-    }
-}
-
-getPhotos('https://fakestoreapi.com/products')
+getData('https://fakestoreapi.com/products')
     .then(res => renderCards(res, '.app'))
     .then(() => renderBasketLength()) 
     .catch(err => console.error('Something went wrong', err)); 
-
 
 const productList = document.querySelector('.app')
 productList.addEventListener('click', addToBasket)
@@ -55,7 +41,5 @@ function addToBasket(e) {
         basket.push(id)
    }
 
-    setCardToLocalStorage(basket) 
-    
+    setCardToLocalStorage(basket)    
 }
-
