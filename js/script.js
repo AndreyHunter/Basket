@@ -1,45 +1,46 @@
 'use strict';
 
-import { 
-    getBasketFromLocalStorage,
-    setCardToLocalStorage,
-    renderBasketLength
+import {
+	getBasketFromLocalStorage,
+	setCardToLocalStorage,
+	renderBasketLength
 } from './modules/localStorage.js';
 
-import {renderCards} from './modules/render.js'
+import { renderCards } from './modules/render.js';
 import { getData } from './modules/requests.js';
+import { CARDS_VIEV_COUNT } from './modules/constans.js';
 
 getData('https://fakestoreapi.com/products')
-    .then(res => renderCards(res, '.app'))
-    .then(() => renderBasketLength()) 
-    .catch(err => console.error('Something went wrong', err)); 
+	.then((res) => renderCards(res, '.app'))
+	.then(() => renderBasketLength())
+	.catch((err) => console.error('Something went wrong', err));
 
-const productList = document.querySelector('.app')
-productList.addEventListener('click', addToBasket)
+const productList = document.querySelector('.app');
+productList.addEventListener('click', addToBasket);
 
 function addToBasket(e) {
-    const targetBtn = e.target.closest('.addToCart-btn')
-    
-    if (!targetBtn) return
+	const targetBtn = e.target.closest('.addToCart-btn');
 
-    const card = targetBtn.closest('.app__card')
+	if (!targetBtn) return;
 
-    if (!card) return
+	const card = targetBtn.closest('.app__card');
 
-    const id = card.dataset.productid
+	if (!card) return;
 
-    let basket = getBasketFromLocalStorage()
+	const id = card.dataset.productid;
 
-    if (!Array.isArray(basket)) {
-        basket = []
-    }
- 
-   if (basket.includes(id)) {
-        const index = basket.indexOf(id)
-        basket.splice(index, 1)
-   } else {
-        basket.push(id)
-   }
+	let basket = getBasketFromLocalStorage();
 
-    setCardToLocalStorage(basket)    
+	if (!Array.isArray(basket)) {
+		basket = [];
+	}
+
+	if (basket.includes(id)) {
+		const index = basket.indexOf(id);
+		basket.splice(index, 1);
+	} else {
+		basket.push(id);
+	}
+
+	setCardToLocalStorage(basket);
 }

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Open Sans';
+}
+
 body {
     overflow-x: hidden;
     margin: 0;
@@ -77,7 +81,6 @@ a {
 
 .app__card-title {
     display: block;
-    font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 700;
     margin-bottom: 5px;
@@ -85,7 +88,7 @@ a {
 }
 
 .app__card-title:hover {
-    color: black;
+    color: rgb(226, 78, 78);
 }
 
 .app__card-image-wrapper {

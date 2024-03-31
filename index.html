@@ -1,30 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Заголовок</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Store</title>
+		<link rel="stylesheet" href="./css/style.css" />
 
-    <div class="container">
-        <nav class="user-actions">
-            <div class="home">
-                <svg fill="#000000" viewBox="-4.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>home</title> <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path> </g></svg>
-            </div>
-            <div class="basket">
-                <svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.82px;}</style></defs><line class="cls-1" x1="1.09" y1="11.09" x2="22.91" y2="11.09"></line><path class="cls-1" d="M17.73,22H6.27a1.82,1.82,0,0,1-1.8-1.52L2.91,11.09H21.09l-1.56,9.39A1.82,1.82,0,0,1,17.73,22Z"></path><polygon class="cls-1" points="12 16.55 7.46 11.09 16.55 11.09 12 16.55"></polygon><line class="cls-1" x1="15.64" y1="18.36" x2="20.18" y2="18.36"></line><line class="cls-1" x1="16.55" y1="14.73" x2="20.18" y2="14.73"></line><line class="cls-1" x1="8.36" y1="18.36" x2="3.82" y2="18.36"></line><line class="cls-1" x1="7.45" y1="14.73" x2="3.82" y2="14.73"></line><path class="cls-1" d="M12,2h0a6.36,6.36,0,0,1,6.36,6.36v2.73a0,0,0,0,1,0,0H5.64a0,0,0,0,1,0,0V8.36A6.36,6.36,0,0,1,12,2Z"></path></g></svg>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="user-actions">
+				<div class="home">
+					<svg
+						fill="#000000"
+						viewBox="-4.5 0 32 32"
+						version="1.1"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g
+							id="SVGRepo_tracerCarrier"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						></g>
+						<g id="SVGRepo_iconCarrier">
+							<title>home</title>
+							<path
+								d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"
+							></path>
+						</g>
+					</svg>
+				</div>
+				<div class="basket">
+					<svg
+						viewBox="0 0 24 24"
+						id="Layer_1"
+						data-name="Layer 1"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="#000000"
+					>
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g
+							id="SVGRepo_tracerCarrier"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						></g>
+						<g id="SVGRepo_iconCarrier">
+							<defs>
+								<style>
+									.cls-1 {
+										fill: none;
+										stroke: #020202;
+										stroke-miterlimit: 10;
+										stroke-width: 1.82px;
+									}
+								</style>
+							</defs>
+							<line class="cls-1" x1="1.09" y1="11.09" x2="22.91" y2="11.09"></line>
+							<path
+								class="cls-1"
+								d="M17.73,22H6.27a1.82,1.82,0,0,1-1.8-1.52L2.91,11.09H21.09l-1.56,9.39A1.82,1.82,0,0,1,17.73,22Z"
+							></path>
+							<polygon
+								class="cls-1"
+								points="12 16.55 7.46 11.09 16.55 11.09 12 16.55"
+							></polygon>
+							<line class="cls-1" x1="15.64" y1="18.36" x2="20.18" y2="18.36"></line>
+							<line class="cls-1" x1="16.55" y1="14.73" x2="20.18" y2="14.73"></line>
+							<line class="cls-1" x1="8.36" y1="18.36" x2="3.82" y2="18.36"></line>
+							<line class="cls-1" x1="7.45" y1="14.73" x2="3.82" y2="14.73"></line>
+							<path
+								class="cls-1"
+								d="M12,2h0a6.36,6.36,0,0,1,6.36,6.36v2.73a0,0,0,0,1,0,0H5.64a0,0,0,0,1,0,0V8.36A6.36,6.36,0,0,1,12,2Z"
+							></path>
+						</g>
+					</svg>
 
-                <span>0</span>
-            </div>
-        </nav>
+					<span>0</span>
+				</div>
+			</nav>
 
-        <div class="app">
-           
-        </div>
-    </div>
+			<div class="app"></div>
+		</div>
 
-    <script src="./js/script.js" type="module" defer></script>
-</body>
+		<script src="./js/script.js" type="module" defer></script>
+	</body>
 </html>
