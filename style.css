@@ -4,6 +4,7 @@
 
 body {
     overflow-x: hidden;
+    margin: 0;
 }
 
 img {
@@ -22,7 +23,37 @@ a {
     max-width: 1200px;
     padding: 0 15px;
     margin-inline: auto;
-    padding-top: 100px;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+.user-actions svg {
+    width: 50px;
+    cursor: pointer;
+}
+
+.user-actions div {
+    position: relative;
+}
+
+.user-actions div span {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    background-color: rgb(175, 223, 104);
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
 }
 
 .app {
