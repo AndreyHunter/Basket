@@ -8,7 +8,8 @@ import {
 
 import { 
     renderCards,
-    renderBasketCards
+    renderBasketCards,
+    renderBasketEmptyMessage
  } from './modules/render.js';
 import { getData } from './modules/requests.js';
 import { 
@@ -32,6 +33,7 @@ getData(PRODUCTS)
         const basket = getBasketFromLocalStorage();
         getBasketIds(basket, PRODUCTS)
             .then(res =>  renderBasketCards(res, '.basket__list'))
+            .then(() => checkBasketLength())
             .catch(err => console.error('Feiled to fetch', err));
     })
 	.catch((err) => console.error('Something went wrong', err));
@@ -106,6 +108,7 @@ function deleteBasketCard(e) {
 
     deleteCardFromLocalStorage(id);
     card.remove();
+    checkBasketLength();
 }
 
 function deleteCardFromLocalStorage(id) {
@@ -113,4 +116,14 @@ function deleteCardFromLocalStorage(id) {
     basket = basket.filter(item => item !== id);
     setCardToLocalStorage(basket);
     updateBasketBtnColor(getBasketFromLocalStorage());
+}
+
+// Функция проверки на пустую корзину
+
+function checkBasketLength() {
+    const basketList = document.querySelector('.basket__list');
+
+    if (basketList.children.length === 0) {
+        renderBasketEmptyMessage('.basket__list');
+    }
 }

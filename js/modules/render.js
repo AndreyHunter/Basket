@@ -60,3 +60,16 @@ export function renderBasketCards(data, selector) {
         element.insertAdjacentHTML('beforeend', basketCardHTML);
     });
 }
+
+export function renderBasketEmptyMessage(selector) {
+    const element = document.querySelector(selector);
+
+    const messageHTML = `
+        <div class="basket-isEmpty">
+            <img src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg" alt="empty-basket-image">
+            <p class="basket-isEmpty__text">Basket is empty</p>
+        </div>
+    `;
+
+    element.insertAdjacentHTML('beforeend', messageHTML);
+}

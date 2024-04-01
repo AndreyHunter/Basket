@@ -281,3 +281,18 @@ a {
 .basket__button:hover {
     background-color: rgb(223, 76, 76);
 }
+
+.basket-isEmpty {
+    align-self: center;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.basket-isEmpty__text {
+    font-size: 2rem;
+    font-weight: 700;
+}
