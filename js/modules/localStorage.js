@@ -26,10 +26,10 @@ export function updateBasketBtnColor(basket) {
 
         if (isInBasket) {
             btn.classList.add('active');
-            btn.textContent = 'В корзине';
+            btn.textContent = 'in cart';
         } else {
             btn.classList.remove('active');
-            btn.textContent = 'Добавить в корзину';
+            btn.textContent = 'Add to cart';
         }
     });
 }        

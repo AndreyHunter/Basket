@@ -16,7 +16,7 @@ export function renderCards(data, selector) {
                 </div>
                 
 
-                <button class="addToCart-btn">Добавить в корзину</button>
+                <button class="addToCart-btn">Add to cart</button>
             </div>
         `;
 
@@ -34,7 +34,7 @@ export function renderBasketCards(data, selector) {
 
         const basketCardHTML = `
                 <li class="basket__item" data-productid="${id}">
-                    <div>
+                    <div class="basket__item-right">
                         <div class="basket__item-image-wrapper">
                             <img src="${image}" alt="${title}" class="basket__item-image">
                         </div>
@@ -47,9 +47,9 @@ export function renderBasketCards(data, selector) {
 
                     <div class="basket__item-actions">
                         <div class="counter">
-                            <div data-counter="minus" class="counter__btn">-</div>
+                            <div data-counter="minus" class="counter__btn"><</div>
                             <div class="counter__body">0</div>
-                            <div data-counter="plus" class="counter__btn">+</div>
+                            <div data-counter="plus" class="counter__btn">></div>
                         </div>
                     </div>
 

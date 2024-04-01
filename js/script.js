@@ -23,6 +23,8 @@ import {
     closeBasketNavBar
 } from './modules/basket-nav-bar.js';
 
+import { addCounter } from './modules/counter.js';
+
 // Получение и инициализация товаров
 
 getData(PRODUCTS)
@@ -60,8 +62,12 @@ window.addEventListener('click', (e) => {
     if (closeBtn || target.classList.contains('basket')) closeBasketNavBar();
 });
 
-// Добавление товара в корзину
+// Счётчик 
+const basketWrapper = document.querySelector('.basket__content');
+basketWrapper.addEventListener('click', addCounter);
 
+
+// Добавление товара в корзину
 const productList = document.querySelector(CATALOG);
 productList.addEventListener('click', addToBasket);
 
