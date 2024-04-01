@@ -38,19 +38,27 @@ getData(PRODUCTS)
 
 // Открытие и закрытие корзины
 
-document.querySelector('.basket-open').addEventListener('click', () => openBasketNavBar('.basket', 'active'));
+document.querySelector('.basket-open').addEventListener('click', () => openBasketNavBar());
 
-window.addEventListener('click', closeBasketNavBarFunc);
+document.addEventListener('keydown', (e) => {
+	const basket = document.querySelector('.basket');
+	if (e.code === 'Escape' && basket.classList.contains('active')) {
+        closeBasketNavBar();
+	} else {
+		return;
+	}
+});
 
-function closeBasketNavBarFunc(e) {
+window.addEventListener('click', (e) => {
     const target = e.target;
     const closeBtn = target.closest('[data-close-cart]');
-    if (!closeBtn) return;
+    const basketModal = document.querySelector('.basket__content');
+    if (!basketModal.classList.contains('active')) return;
 
-    if (closeBtn) closeBasketNavBar('.basket', 'active');
-}
+    if (closeBtn || target.classList.contains('basket')) closeBasketNavBar();
+});
 
-
+// Добавление товара в корзину
 
 const productList = document.querySelector(CATALOG);
 productList.addEventListener('click', addToBasket);
@@ -79,12 +87,12 @@ async function addToBasket(e) {
     updateBasketBtnColor(basket);
     const basketArray = await getBasketIds(basket, PRODUCTS);
     renderBasketCards(basketArray, '.basket__list');
-    openBasketNavBar('.basket', 'active');
+    openBasketNavBar();
 }
 
 // Удаление товара из корзины 
 
-const basketNavBar = document.querySelector('.basket');
+const basketNavBar = document.querySelector('.basket__content');
 basketNavBar.addEventListener('click', deleteBasketCard);
 
 function deleteBasketCard(e) {

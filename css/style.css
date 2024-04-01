@@ -141,13 +141,27 @@ a {
 /* BASKET */
 
 .basket {
-    width: 500px;
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: flex-end;
+    visibility: hidden;
+    transition: .2s ease-in-out;
+}
+
+.basket.active {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.249);
+}
+
+.basket__content {
+    width: 450px;
     min-height: 100%;
     visibility: hidden;
     transform: translateX(100%);
     background-color: whitesmoke;
-    position: fixed;
-    inset: 0 0 0 auto;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -155,9 +169,9 @@ a {
     transition: .2s ease-in-out;
 }
 
-.basket.active {
+.basket__content.active {
     visibility: visible;
-    transform: translateX(0);
+    transform: none;
 }
 
 .basket__title {
