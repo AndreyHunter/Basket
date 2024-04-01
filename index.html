@@ -5,11 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Store</title>
 		<link rel="stylesheet" href="./css/style.css" />
-
-		<link
-			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-			rel="stylesheet"
-		/>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"rel="stylesheet"/>
 	</head>
 	<body>
 		<div class="container">
@@ -35,7 +31,7 @@
 						</g>
 					</svg>
 				</div>
-				<div class="basket">
+				<div class="basket-open">
 					<svg
 						viewBox="0 0 24 24"
 						id="Layer_1"
@@ -79,13 +75,77 @@
 							></path>
 						</g>
 					</svg>
-
 					<span>0</span>
 				</div>
 			</nav>
 
 			<div class="app"></div>
 		</div>
+
+        <section class="basket">
+            <h2 class="basket__title">Product List</h2>
+
+            <ul class="basket__list">
+                <li class="basket__item">
+                    <div>
+                        <div class="basket__item-image-wrapper">
+                            <img 
+                                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                                alt="" 
+                                class="basket__item-image"
+                                >
+                        </div>
+    
+                        <div class="basket__item-about">
+                            <h4 class="basket__item-title">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h4>
+                            <div class="basket__item-price">231 $</div>
+                        </div>
+                    </div>
+
+                    <div class="basket__item-actions">
+                        <div class="counter">
+                            <div data-counter="minus" class="counter__btn">-</div>
+                            <div class="counter__body">34</div>
+                            <div data-counter="plus" class="counter__btn">+</div>
+                        </div>
+                    </div>
+
+                    <div class="basket__item-closeBtn">✖</div>
+                </li>
+
+                <li class="basket__item">
+                    <div>
+                        <div class="basket__item-image-wrapper">
+                            <img 
+                                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                                alt="" 
+                                class="basket__item-image"
+                                >
+                        </div>
+    
+                        <div class="basket__item-about">
+                            <h4 class="basket__item-title">Mens Casual Premium Slim Fit T-Shirts</h4>
+                            <div class="basket__item-price">231 $</div>
+                        </div>
+                     </div>
+
+                    <div class="basket__item-actions">
+                        <div class="counter">
+                            <div data-counter="minus" class="counter__btn">-</div>
+                            <div class="counter__body">12</div>
+                            <div data-counter="plus" class="counter__btn">+</div>
+                        </div>
+                    </div>
+
+                    <div class="basket__item-closeBtn">✖</div>
+                </li>        
+            </ul>
+
+            <div class="basket__buttons">
+                <button class="btn basket__button">Close</button>
+                <button class="btn basket__button">Check out</button>
+            </div>
+        </section>
 
 		<script src="./js/script.js" type="module" defer></script>
 	</body>

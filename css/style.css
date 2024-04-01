@@ -21,6 +21,12 @@ h1, h2, h3, h4, h5, h6, p  {
     margin: 0;
 }
 
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 a {
     text-decoration: none;
 }
@@ -130,4 +136,125 @@ a {
     .app {
         grid-template-columns: 1fr;
     }
+}
+
+/* BASKET */
+
+.basket {
+    width: 400px;
+    min-height: 100%;
+    background-color: whitesmoke;
+    position: fixed;
+    inset: 0 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.basket__title {
+    padding: 20px 20px 10px 20px;
+    font-size: 2rem;
+}
+
+.basket__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.basket__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    min-height: 150px;
+    background-color: rgb(226, 226, 226);
+    position: relative;
+}
+
+.basket__item div {
+    display: flex;
+    gap: 15px;
+}
+
+.basket__item-image-wrapper {
+    max-width: 90px;
+    height: 100%;
+}
+
+.basket__item-image {
+    object-fit: contain;
+}
+
+.basket__item-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.basket__item-actions {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.counter__btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(232, 120, 120);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+}
+
+.counter__btn:hover {
+    background-color: rgb(199, 93, 93);
+}
+
+.counter__body {
+    user-select: none;
+}
+
+.basket__item-closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+}
+
+.basket__item-closeBtn:hover {
+    opacity: 1;
+}
+
+.basket__buttons {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid rgb(186, 138, 138);
+}
+
+.basket__button {
+    min-height: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: rgb(232, 96, 96);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.basket__button:hover {
+    background-color: rgb(223, 76, 76);
 }

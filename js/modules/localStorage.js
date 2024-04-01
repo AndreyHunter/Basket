@@ -1,6 +1,6 @@
 export function setCardToLocalStorage(basket) {
 	localStorage.setItem('basket', JSON.stringify(basket));
-	const basketLenghtText = document.querySelector('.basket span');
+	const basketLenghtText = document.querySelector('.basket-open span');
 	basketLenghtText.textContent = basket.length;
 }
 
@@ -10,7 +10,7 @@ export function getBasketFromLocalStorage() {
 }
 
 export function renderBasketLength() {
-	const basketLenghtText = document.querySelector('.basket span');
+	const basketLenghtText = document.querySelector('.basket-open span');
 	const basket = getBasketFromLocalStorage();
 	basketLenghtText.textContent = basket.length;
 }

@@ -1,5 +1,3 @@
-'use strict';
-
 import {
 	getBasketFromLocalStorage,
 	setCardToLocalStorage,
@@ -9,15 +7,18 @@ import {
 
 import { renderCards } from './modules/render.js';
 import { getData } from './modules/requests.js';
-import { CARDS_VIEV_COUNT } from './modules/constans.js';
+import { 
+    CARDS_VIEV_COUNT,
+    CATALOG
+} from './modules/constans.js';
 
 getData('https://fakestoreapi.com/products')
-	.then((res) => renderCards(res, '.app'))
+	.then((res) => renderCards(res, CATALOG))
 	.then(() => renderBasketLength())
     .then(() => updateBasketBtnColor(getBasketFromLocalStorage()))
 	.catch((err) => console.error('Something went wrong', err));
 
-const productList = document.querySelector('.app');
+const productList = document.querySelector(CATALOG);
 productList.addEventListener('click', addToBasket);
 
 function addToBasket(e) {
