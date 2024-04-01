@@ -148,10 +148,11 @@ a {
     background-color: whitesmoke;
     position: fixed;
     inset: 0 0 0 auto;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .basket.active {

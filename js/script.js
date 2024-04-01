@@ -17,6 +17,13 @@ import {
     PRODUCTS
 } from './modules/constans.js';
 
+import {
+    openBasketNavBar, 
+    closeBasketNavBar
+} from './modules/basket-nav-bar.js';
+
+// Получение и инициализация товаров
+
 getData(PRODUCTS)
 	.then((res) => renderCards(res, CATALOG))
 	.then(() => renderBasketLength())
@@ -28,6 +35,22 @@ getData(PRODUCTS)
             .catch(err => console.error('Feiled to fetch', err));
     })
 	.catch((err) => console.error('Something went wrong', err));
+
+// Открытие и закрытие корзины
+
+document.querySelector('.basket-open').addEventListener('click', () => openBasketNavBar('.basket', 'active'));
+
+window.addEventListener('click', closeBasketNavBarFunc);
+
+function closeBasketNavBarFunc(e) {
+    const target = e.target;
+    const closeBtn = target.closest('[data-close-cart]');
+    if (!closeBtn) return;
+
+    if (closeBtn) closeBasketNavBar('.basket', 'active');
+}
+
+
 
 const productList = document.querySelector(CATALOG);
 productList.addEventListener('click', addToBasket);
@@ -56,6 +79,7 @@ async function addToBasket(e) {
     updateBasketBtnColor(basket);
     const basketArray = await getBasketIds(basket, PRODUCTS);
     renderBasketCards(basketArray, '.basket__list');
+    openBasketNavBar('.basket', 'active');
 }
 
 // Удаление товара из корзины 
