@@ -141,14 +141,22 @@ a {
 /* BASKET */
 
 .basket {
-    width: 400px;
+    width: 500px;
     min-height: 100%;
+    visibility: hidden;
+    transform: translateX(100%);
     background-color: whitesmoke;
     position: fixed;
     inset: 0 0 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    transition: .3s ease-in-out;
+}
+
+.basket.active {
+    visibility: visible;
+    transform: translateX(0);
 }
 
 .basket__title {

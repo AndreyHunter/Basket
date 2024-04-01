@@ -32,4 +32,20 @@ export function updateBasketBtnColor(basket) {
             btn.textContent = 'Добавить в корзину';
         }
     });
-}               
+}        
+
+export async function getBasketIds(basket, url) {
+    const basketIds = basket.map(item => parseInt(item));
+
+    try {
+        const res = await fetch(url);
+
+        if (!res.ok) throw new Error('Network response was not ok');
+        const data = await res.json();
+
+        return data.filter(item => basketIds.includes(item.id));
+
+    } catch (err) {
+        console.error('Feiled on fetch', err);
+    }
+}

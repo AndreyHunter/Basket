@@ -23,3 +23,40 @@ export function renderCards(data, selector) {
 		element.insertAdjacentHTML('beforeend', cardHTML);
 	}
 }
+
+export function renderBasketCards(data, selector) {
+    const element = document.querySelector(selector);
+
+    element.innerHTML = '';
+
+    data.forEach(item => {
+        const { id, title, price, image } = item;
+
+        const basketCardHTML = `
+                <li class="basket__item" data-productid="${id}">
+                    <div>
+                        <div class="basket__item-image-wrapper">
+                            <img src="${image}" alt="${title}" class="basket__item-image">
+                        </div>
+
+                        <div class="basket__item-about">
+                            <h4 class="basket__item-title">${title}</h4>
+                            <div class="basket__item-price">${price} $</div>
+                        </div>
+                    </div>
+
+                    <div class="basket__item-actions">
+                        <div class="counter">
+                            <div data-counter="minus" class="counter__btn">-</div>
+                            <div class="counter__body">0</div>
+                            <div data-counter="plus" class="counter__btn">+</div>
+                        </div>
+                    </div>
+
+                    <div class="basket__item-closeBtn">✖</div>
+                </li>
+            `;
+
+        element.insertAdjacentHTML('beforeend', basketCardHTML);
+    });
+}
