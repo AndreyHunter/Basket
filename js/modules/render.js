@@ -5,7 +5,7 @@ export function renderCards(data, selector) {
 		const { id, title, price, image } = key;
 
 		const cardHTML = `
-            <div class="app__card" data-productid="${id}">
+            <li class="app__card" data-productid="${id}">
                 <div class="app__card-image-wrapper">
                     <a href="#!"><img src="${image}" alt="" class="app__card-image"></a>
                 </div>
@@ -17,7 +17,7 @@ export function renderCards(data, selector) {
                 
 
                 <button class="addToCart-btn">Add to cart</button>
-            </div>
+            </li>
         `;
 
 		element.insertAdjacentHTML('beforeend', cardHTML);
