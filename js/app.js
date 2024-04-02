@@ -23,7 +23,10 @@ import {
     closeBasketNavBar
 } from './modules/basket-nav-bar.js';
 
-import { addCounter } from './modules/counter.js';
+import { 
+    addCounter,
+    caclulateTotalPrice
+} from './modules/counter.js';
 
 // Получение и инициализация товаров
 
@@ -36,6 +39,7 @@ getData(PRODUCTS)
         getBasketIds(basket, PRODUCTS)
             .then(res =>  renderBasketCards(res, '.basket__list'))
             .then(() => checkBasketLength())
+            .then(() =>  caclulateTotalPrice())
             .catch(err => console.error('Feiled to fetch', err));
     })
 	.catch((err) => console.error('Something went wrong', err));
@@ -96,6 +100,7 @@ async function addToBasket(e) {
     const basketArray = await getBasketIds(basket, PRODUCTS);
     renderBasketCards(basketArray, '.basket__list');
     openBasketNavBar();
+    caclulateTotalPrice();
 }
 
 // Удаление товара из корзины 
@@ -115,6 +120,7 @@ function deleteBasketCard(e) {
     deleteCardFromLocalStorage(id);
     card.remove();
     checkBasketLength();
+    caclulateTotalPrice();
 }
 
 function deleteCardFromLocalStorage(id) {

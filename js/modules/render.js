@@ -48,7 +48,7 @@ export function renderBasketCards(data, selector) {
                     <div class="basket__item-actions">
                         <div class="counter">
                             <div data-counter="minus" class="counter__btn"><</div>
-                            <div class="counter__body">0</div>
+                            <div class="counter__body">1</div>
                             <div data-counter="plus" class="counter__btn">></div>
                         </div>
                     </div>
