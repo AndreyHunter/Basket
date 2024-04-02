@@ -36,11 +36,11 @@ export function renderBasketCards(data, selector) {
                 <li class="basket__item" data-productid="${id}">
                     <div class="basket__item-right">
                         <div class="basket__item-image-wrapper">
-                            <img src="${image}" alt="${title}" class="basket__item-image">
+                            <a href="#!"><img src="${image}" alt="${title}" class="basket__item-image"></a>
                         </div>
 
                         <div class="basket__item-about">
-                            <h4 class="basket__item-title">${title}</h4>
+                            <a href="#!" class="basket__item-title">${title}</a>
                             <div class="basket__item-price">${price} $</div>
                         </div>
                     </div>

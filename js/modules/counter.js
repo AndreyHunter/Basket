@@ -25,12 +25,12 @@ export function caclulateTotalPrice() {
     card.forEach(item => {
         const counter = item.querySelector('.counter__body');
         const currentPrice = item.querySelector('.basket__item-price');
-        const sum = parseInt(counter.textContent) * parseInt(currentPrice.textContent);
+        const sum = parseFloat(counter.textContent) * parseFloat(currentPrice.textContent);
         totalPrice += sum;
     });
 
-    console.log(totalPrice);
+    const roundedTotalPrice = totalPrice.toFixed(2);
 
     const totalPriceText = document.querySelector('.basket__total');
-    totalPriceText.textContent = `Total: ${totalPrice} $`;   
+    totalPriceText.textContent = `Total: ${roundedTotalPrice} $`;   
 }
